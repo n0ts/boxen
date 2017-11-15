@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |gem|
-  gem.name          = "boxen"
+  gem.name          = "boxen23"
   gem.version       = "3.1.0"
   # Thanks go out to the previous maintainers John Barnette, Will
   # Farrington, David Goodlad and Mike McQuaid for getting this project
   # to where it is today.
   gem.authors       = ["Jacob Bednarz"]
   gem.email         = ["jacob.bednarz@gmail.com"]
-  gem.description   = "Manage Mac development boxes with love (and Puppet)."
+  gem.description   = "Manage Mac development boxes with love (and Puppet). for Ruby 2.3"
   gem.summary       = "You know, for laptops and stuff."
   gem.homepage      = "https://github.com/boxen/boxen"
   gem.license       = 'MIT'
