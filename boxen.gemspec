@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name          = "boxen23"
-  gem.version       = "3.1.0"
+  gem.version       = "3.1.3"
   # Thanks go out to the previous maintainers John Barnette, Will
   # Farrington, David Goodlad and Mike McQuaid for getting this project
   # to where it is today.
@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "highline",         "~> 1.7.8"
   gem.add_dependency "json_pure",        [">= 1.8.3", "< 2.0"]
   gem.add_dependency "librarian-puppet", "~> 2.2"
-  gem.add_dependency "octokit",          "~> 4.7", ">= 4.7.0"
+  gem.add_dependency "octokit",          ["~> 4.6", "<= 4.6.2"]
   gem.add_dependency "puppet",           "~> 4.10"
 
   gem.add_development_dependency "minitest", "4.4.0" # pinned for mocha
