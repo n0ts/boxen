@@ -117,6 +117,13 @@ class BoxenConfigTest < Boxen::Test
     assert @config.future_parser?
   end
 
+  def test_skip_puppetfile?
+    refute @config.skip_puppetfile?
+
+    @config.skip_puppetfile = true
+    assert @config.skip_puppetfile?
+  end
+
   def test_projects
     files = Dir["#{@config.repodir}/modules/projects/manifests/*.pp"]
     assert_equal files.size, @config.projects.size

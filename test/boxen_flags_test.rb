@@ -16,6 +16,7 @@ class BoxenFlagsTest < Boxen::Test
       expects(:pretend=).with true
       expects(:profile=).with true
       expects(:future_parser=).with true
+      expects(:skip_puppetfile=).with true
       expects(:report=).with true
       expects(:graph=).with true
       expects(:srcdir=).with "srcdir"
@@ -28,7 +29,7 @@ class BoxenFlagsTest < Boxen::Test
 
     flags = Boxen::Flags.new "--debug", "--help", "--login", "login",
       "--no-fde", "--no-pull", "--no-issue", "--noop",
-      "--pretend", "--profile", "--future-parser", "--report", "--graph", "--projects",
+      "--pretend", "--profile", "--future-parser", "--skip-puppetfile", "--report", "--graph", "--projects",
       "--user", "user", "--homedir", "homedir", "--srcdir", "srcdir",
       "--logfile", "logfile", "--token", "token"
 
@@ -169,6 +170,11 @@ class BoxenFlagsTest < Boxen::Test
   def test_future_parser
     refute flags.future_parser?
     assert flags("--future-parser").future_parser?
+  end
+
+  def test_skip_puppetfile
+    refute flags.skip_puppetfile?
+    assert flags("--skip-puppetfile").skip_puppetfile?
   end
 
   def test_report
