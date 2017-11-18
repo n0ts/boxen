@@ -169,6 +169,14 @@ module Boxen
 
     attr_writer :future_parser
 
+    # Skip installing librarian-puppet
+
+    def skip_puppetfile?
+      !!@skip_puppetfile
+    end
+
+    attr_writer :skip_puppetfile
+
     # Enable puppet reports ? Default is `false`.
 
     def report?

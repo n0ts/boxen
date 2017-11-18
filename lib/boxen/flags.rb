@@ -135,6 +135,10 @@ module Boxen
           @future_parser = true
         end
 
+        o.on "--skip-puppetfile", "Skip installing librarian-puppet" do
+          @skip_puppetfile = true
+        end
+
         o.on "--projects", "Show available projects." do
           @projects = true
         end
@@ -167,6 +171,7 @@ module Boxen
       config.pretend       = pretend?
       config.profile       = profile?
       config.future_parser = future_parser?
+      config.skip_puppetfile = skip_puppetfile?
       config.report        = report?
       config.graph         = graph?
       config.srcdir        = srcdir   if srcdir
@@ -253,6 +258,10 @@ module Boxen
 
     def future_parser?
       @future_parser
+    end
+
+    def skip_puppetfile?
+      @skip_puppetfile
     end
 
     def report?

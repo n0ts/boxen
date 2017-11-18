@@ -93,7 +93,8 @@ module Boxen
       FileUtils.mkdir_p File.dirname config.logfile
       FileUtils.touch config.logfile
 
-      if File.file? "Puppetfile"
+      if File.file? "Puppetfile" and !config.skip_puppetfile?
+
         librarian = "#{config.repodir}/bin/librarian-puppet"
 
         unless config.enterprise?
