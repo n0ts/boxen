@@ -1,3 +1,4 @@
+require "boxen/error"
 require "shellwords"
 
 module Boxen
@@ -35,6 +36,7 @@ module Boxen
     attr_reader :login
 
     def get(service)
+      return nil if RUBY_PLATFORM !~ /darwin/
       cmd = shellescape(HELPER, service, login)
 
       result = `#{cmd}`.strip
@@ -42,6 +44,7 @@ module Boxen
     end
 
     def set(service, token)
+      return nil if RUBY_PLATFORM !~ /darwin/
       cmd = shellescape(HELPER, service, login, token)
 
       unless system *cmd
