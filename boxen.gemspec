@@ -1,8 +1,8 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |gem|
-  gem.name          = "boxen"
-  gem.version       = "4.0.0"
+  gem.name          = "boxen23"
+  gem.version       = "4.0.0a"
   # Thanks go out to the previous maintainers John Barnette, Will
   # Farrington, David Goodlad and Mike McQuaid for getting this project
   # to where it is today.
@@ -18,8 +18,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency "ansi",             "~> 1.5"
-  gem.add_dependency "hiera",            "~> 3.4.2"
-  gem.add_dependency "highline",         "~> 1.7.8"
+  gem.add_dependency "hiera",            "~> 3.4"
+  gem.add_dependency "highline",         "~> 1.7"
   gem.add_dependency "json_pure",        [">= 1.8.3", "< 2.0"]
   gem.add_dependency "octokit",          ["~> 3.8", ">= 3.8.0"]
   gem.add_dependency "puppet",           "~> 4.10"

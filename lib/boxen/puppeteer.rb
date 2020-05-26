@@ -1,3 +1,4 @@
+require "etc"
 require "fileutils"
 require "boxen/util"
 
@@ -38,8 +39,11 @@ module Boxen
     def flags
       flags = []
       root  = File.expand_path "../../..", __FILE__
+      user  = Etc.getlogin
+      group = Etc.getgrgid(Etc.getpwnam(user).gid)
 
-      flags << ["--group",       "admin"]
+      flags << ["--user",        user]
+      flags << ["--group",       group.name]
       flags << ["--confdir",     "#{config.puppetdir}/conf"]
       flags << ["--vardir",      "#{config.puppetdir}/var"]
       flags << ["--libdir",      "#{config.repodir}/lib"]#:#{root}/lib"]
