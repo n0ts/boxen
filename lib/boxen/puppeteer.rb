@@ -107,7 +107,7 @@ module Boxen
           ENV["GITHUB_API_TOKEN"] = config.token
         end
 
-        librarian_command = [librarian, "install", "--path=#{config.repodir}/shared"]
+        librarian_command = [librarian, "install", "--no-use-v1-api", "--path=#{config.repodir}/shared"]
         librarian_command << "--verbose" if config.debug?
 
         warn librarian_command.join(" ") if config.debug?

@@ -4,4 +4,9 @@
 cd "$(dirname $0)"/..
 
 rm -f .bundle/config
-bundle install --binstubs bin --path .bundle --quiet
+
+bundle config path $BUNDLE
+set +e
+bundle binstubs --path=.bundle
+set -e
+bundle install --quiet
